@@ -11,10 +11,10 @@ import UIKit
 class RootTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cleanerViewController = segue.destination as? CleanInjectDisplayDelegate,
+        if let cleanInjectableViewController = segue.destination as? CleanInjectDisplayDelegate,
             segue.identifier == "presentCleanInject" {
-            cleanerViewController.interactor = CleanInjectInteractor(
-                presenter: CleanInjectPresenter(display: cleanerViewController)
+            cleanInjectableViewController.interactor = CleanInjectInteractor(
+                presenter: CleanInjectPresenter(display: cleanInjectableViewController)
             )
         }
     }
